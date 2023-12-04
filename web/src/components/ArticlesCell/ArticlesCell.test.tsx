@@ -37,5 +37,12 @@ describe('ArticlesCell', () => {
     expect(() => {
       render(<Success articles={standard().articles} />)
     }).not.toThrow()
+
+    expect(screen.getByText(articles[0].title)).toBeInTheDocument()
+    expect(
+      screen.getByText(
+        'Neutra tacos hot chicken prism raw denim, put a bird on it enamel pin post-ironic vape cred DIY. Str...'
+      )
+    ).toBeInTheDocument()
   })
 })
